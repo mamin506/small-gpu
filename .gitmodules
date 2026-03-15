@@ -1,0 +1,3 @@
+[submodule "tools/sv2v"]
+	path = tools/sv2v
+	url = https://github.com/zachjs/sv2v

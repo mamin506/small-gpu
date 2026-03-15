@@ -1,9 +1,12 @@
 import datetime  # Import the datetime module to work with dates and times
+import os  # Import os module for path operations
 
 class Logger:  # Define a Logger class for logging messages to a file
     def __init__(self, level="debug"):  # Initialize the Logger instance with a log level
         # Create a log filename with the current date and time for uniqueness
-        self.filename = f"test/logs/log_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.txt"
+        log_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs")
+        os.makedirs(log_dir, exist_ok=True)
+        self.filename = os.path.join(log_dir, f"log_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.txt")
         self.level = level  # Set the logging level (default is "debug")
 
     def debug(self, *messages):  # Method to log debug messages
