@@ -1,0 +1,6 @@
+sim_build/
+gpu_files/*.v
+
+__pycache__/
+logs/
+results.xml
