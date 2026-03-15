@@ -13,7 +13,7 @@ async def setup(
     threads: int  # Number of threads to configure
 ):
     # Setup Clock
-    clock = Clock(dut.clk, 25, units="us")  # Create a clock with 25 microsecond period on dut.clk
+    clock = Clock(dut.clk, 25, unit="us")  # Create a clock with 25 microsecond period on dut.clk
     cocotb.start_soon(clock.start())  # Start the clock asynchronously
 
     # Reset
